@@ -53,6 +53,8 @@ $config = [
             'showScriptName' => false,
             'enableStrictParsing' => false,
             'rules' => [
+                'category/<id:\d+>' => 'category/view',//переназначаем вид ссылки (на => с)
+                'product/<id:\d+>' => 'product/view',
             ],
         ],
     ],
