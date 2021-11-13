@@ -22,7 +22,7 @@ $config = [
             'baseUrl' => '',
         ],
         'cache' => [
-            'class' => 'yii\caching\FileCache',
+            'class' => 'yii\caching\FileCache',//используется для кэширования данных
         ],
         'user' => [
             'identityClass' => 'app\models\User',
