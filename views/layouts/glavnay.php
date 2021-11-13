@@ -11,6 +11,7 @@ $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language //подключаем язык?>">
 <head>
+    <base href="/"><!-- добавляет ко всем src ресурсов -->
     <title><?= Html::encode($this->title) //подключаем название окна?></title>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -83,9 +84,6 @@ $this->beginPage() ?>
     </div>
 </div>
 <!-- //header -->
-<!-- banner -->
-<div class="banner">
-    <?= $this->render('//layouts/inc/sidebar') //подключаем боковой сайтбар?>
 <?= $content ?>
 <!-- newsletter -->
 <div class="newsletter">
