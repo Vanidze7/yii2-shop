@@ -2,7 +2,7 @@
 <div class="products-breadcrumb">
     <div class="container">
         <ul>
-            <li><i class="fa fa-home" aria-hidden="true"></i><a href="index.html">Home</a><span>|</span></li>
+            <li><i class="fa fa-home" aria-hidden="true"></i><a href="<?= \yii\helpers\Url::home() //ссылка на главную страницу?>">Home</a><span>|</span></li>
             <li><?= $category->title ?></li>
         </ul>
     </div>

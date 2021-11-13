@@ -16,6 +16,8 @@ class CategoryController extends AppController
         if(empty($category))
             throw new NotFoundHttpException('Такой категории нет, сучка!');//сообщение с ошибкой
 
+        $this->setMeta("{$category->title} :" . \Yii::$app->name, $category->keywords, $category->description);
+        //прописываем имя вкладки и приклеиваем имя из web с другими метаданными
         $products = Product::find()->where(['category_id' => $id])->all();
         return $this->render('view', compact('products', 'category'));
     }
