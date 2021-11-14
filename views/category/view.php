@@ -115,6 +115,7 @@
                 </div>
                 <?php endforeach; ?>
                 <div class="clearfix"> </div>
+                <?= \yii\widgets\LinkPager::widget(['pagination' => $pages])//вывод постраничной навигации?>
             </div>
             <?php else : ?>
             <div class="w3ls_w3l_banner_nav_right_grid1">
