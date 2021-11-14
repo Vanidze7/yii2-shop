@@ -56,6 +56,7 @@ $config = [
                 'category/<id:\d+>/page/<page:\d+>' => 'category/view',//нужно пояснение как это работает
                 'category/<id:\d+>' => 'category/view',//переназначаем вид ссылки (на => с)
                 'product/<id:\d+>' => 'product/view',
+                'search' => 'category/search',
             ],
         ],
     ],

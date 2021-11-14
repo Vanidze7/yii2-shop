@@ -26,8 +26,8 @@ $this->beginPage() ?>
         <a href="products.html">Today's special Offers !</a>
     </div>
     <div class="w3l_search">
-        <form action="#" method="post">
-            <input type="text" name="Product" value="Search a product..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
+        <form action="<?= Url::to(['category/search']) //ссылка на action контроллера?>" method="get">
+            <input type="text" name="q" value="Search a product..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
             <input type="submit" value=" ">
         </form>
     </div>
