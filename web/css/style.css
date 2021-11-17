@@ -170,6 +170,13 @@ ul.dropdown-menu.drp-mnu li a i {
     line-height: 1;
     height: 97px;
 }
+img{
+	max-width: 100%;
+	height: auto;
+}
+.snipcart-thumb img{
+	max-height: 140px;
+}
 .profile_details_drop a {
     display: block;
 	padding-top:1em;
