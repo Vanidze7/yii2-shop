@@ -65,3 +65,71 @@ paypal.minicart.cart.on('checkout', function (evt) {
         evt.preventDefault();
     }
 });
+/*Cart*/
+$('.add-to-cart').on('click', function () {//при добавлении товара
+    let id = $(this).data('id');
+    $.ajax({
+        url: 'cart/add',//на метод контроллера
+        data: {id: id},
+        type: 'GET',
+        success: function (res) {
+            if(!res) alert('Ошибка');
+            showCart(res);//при добавлении обращаемся к функции ниже
+        },
+        error: function(){
+            alert('Error!');
+        }
+    });
+    return false;
+});
+function getCart(){//при нажатии на корзину
+    $.ajax({
+        url: 'cart/show',//на метод в контроллере
+        type: 'GET',
+        success: function (res) {
+            if(!res) alert('Ошибка');
+            showCart(res);//при показе корзины обращаемся к функции ниже
+        },
+        error: function(error){
+            alert('Error!');
+        }
+    });
+}
+function clearCart() {
+    $.ajax({
+        url: 'cart/clear',
+        type: 'GET',
+        success: function (res) {
+            if(!res) alert('Ошибка');
+            showCart(res);//при очистки корзины обращаемся к функции ниже
+        },
+        error: function(){
+            alert('Error!');
+        }
+    });
+}
+function showCart(cart){//показ корзины
+    $('#modal-cart .modal-body').html(cart);
+    $('#modal-cart').modal();
+    let cartSum = $('#cart-sum').text() ? $('#cart-sum').text() : '$0';
+    if(cartSum){
+        $('.cart-sum').text(cartSum);
+    }
+}
+$('#modal-cart .modal-body').on('click', '.del-item', function () {
+    let id = $(this).data('id');
+    $.ajax({
+        url: 'cart/del-item',//на метод контроллера
+        data: {id: id},
+        type: 'GET',
+        success: function (res) {
+            if(!res) alert('Ошибка');
+            showCart(res);//после удаления товара обращаемся к функции выше (обновляем окно)
+        },
+        error: function(){
+            alert('Error!');
+        }
+    });
+});
+
+/*Cart*/

@@ -68,7 +68,7 @@ i.badge.badge-notify.my-cart-badge {
 }
 .product_list_header span {
     font-size: 1em;
-    color: #fff;
+    color: #ffffff;
 	top: 1em;
 }
 input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input[type="reset"],.agileinfo_mail_grid_left ul li a,.events_bottom_left2 ul li a,.w3ls_service_grids1_right a,ul.agileits_social_icons li a,.w3l_banner_nav_right_banner_pet a,.w3ls_w3l_banner_nav_right_grid_head_grid ul li a,.products-breadcrumb ul li a,.w3_footer_grid ul li a,.w3l_fresh_vegetables_grid ul li a,.wthree_footer_copy p a,.agile_top_brand_left_grid1 .button,.w3ls_logo_products_left1 ul.special_items li a,.w3ls_logo_products_left1 ul.phone_email li a{
@@ -1192,7 +1192,7 @@ button.submit.check_out{
 	bottom: 20px;
 	right: 2%;
 	overflow: hidden;
-	z-index: 999; 
+	z-index: 999;
 	width: 32px;
 	height: 32px;
 	border: none;
@@ -1330,31 +1330,31 @@ button.submit.check_out{
     -webkit-animation-duration: 2s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
-    
+
     -moz-animation-name: blinker;
     -moz-animation-duration: 2s;
     -moz-animation-timing-function: linear;
     -moz-animation-iteration-count: infinite;
-    
+
     animation-name: blinker;
     animation-duration: 2s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 
-@-moz-keyframes blinker {  
+@-moz-keyframes blinker {
     0% { opacity: 1.0; }
     50% { opacity: 0.0; }
     100% { opacity: 1.0; }
 }
 
-@-webkit-keyframes blinker {  
+@-webkit-keyframes blinker {
     0% { opacity: 1.0; }
     50% { opacity: 0.0; }
     100% { opacity: 1.0; }
 }
 
-@keyframes blinker {  
+@keyframes blinker {
     0% { opacity: 1.0; }
     50% { opacity: 0.0; }
     100% { opacity: 1.0; }
@@ -1489,6 +1489,46 @@ button.submit.check_out{
    position: relative;
    text-align: center;
 }
+.product_list_header button.button {
+	color: #fff;
+	font-size: 14px;
+	outline: none;
+	text-transform: capitalize;
+	padding: 0.5em 2.5em 0.5em 1em;
+	border: 1px solid #84c639;
+	margin: 0.35em 0 0;
+	background: url(../images/cart.png) no-repeat 116px 9px;
+	width: 144px;
+}
+.snipcart-details a.button {
+	font-size: 14px;
+	color: #fff;
+	background: #FA1818;
+	text-decoration: none;
+	position: relative;
+	border: none;
+	border-radius: 0;
+	width: 100%;
+	display: block;
+	text-transform: uppercase;
+	padding: 0.5em 0;
+	outline: none;
+}
+.agile_top_brand_left_grid:hover .snipcart-details input.button, .snipcart-details a.button:hover {
+	background: #84C639;
+}
+.product_list_header button.close span{
+	color: #000;
+	top: 0;
+}
+.product_list_header span.del-item{
+	color: #FA1818;
+	top: 0;
+	cursor: pointer;
+}
+#modal-cart img{
+	max-height: 40px;
+}
 .view .mask,.view .content {
    position: absolute;
    overflow: hidden;
@@ -1608,7 +1648,7 @@ li.list-group-item1 {
 .label {
 	font-weight: 300 !important;
 	border-radius:4px;
-}  
+}
 .grid_5{
 	background:none;
 	padding:2em 0;
@@ -2209,7 +2249,7 @@ ul.wmuSliderPagination {
 	font-size: 1.1em;
     color: #212121;
     text-transform: uppercase;
-}	
+}
 .w3agile_event_grid_right p{
 	font-size:14px;
 	color:#999;
@@ -2510,12 +2550,12 @@ td.invert-image a img {
 }
 .quantity-select .entry.value-minus:before,
 .quantity-select .entry.value-plus:before{
-	content: ""; 
+	content: "";
 	width: 13px;
-	height: 2px; 
+	height: 2px;
 	background: #000;
 	left: 50%;
-	margin-left: -7px; 
+	margin-left: -7px;
 	top: 50%;
 	margin-top: -0.5px;
 	position: absolute;
@@ -2523,9 +2563,9 @@ td.invert-image a img {
 .quantity-select .entry.value-plus:after{
 	content: "";
 	height: 13px;
-	width: 2px; 
+	width: 2px;
 	background: #000;
-	left: 50%; 
+	left: 50%;
 	margin-left: -1.4px;
     top: 50%;
     margin-top: -6.2px;
@@ -2577,7 +2617,7 @@ td.invert-image a img {
 }
 .checkout-right-basket{
 	float: right;
-margin: 3em 0 0 0em;    
+margin: 3em 0 0 0em;
 }
 .checkout-left-basket ul li span {
     float: right;
@@ -2646,16 +2686,16 @@ input.checkbox:before {
 	cursor: pointer;
 }
 input.checkbox:after {
-	content: ""; 
+	content: "";
 	position: absolute;
 	top: 0px;
 	left: 0;
 	z-index: 1;
 	width: 1.2em;
 	height: 1.2em;
-	border: 1px solid #fff; 
+	border: 1px solid #fff;
 	-webkit-transition: .4s ease-in-out;
-	-moz-transition: .4s ease-in-out; 
+	-moz-transition: .4s ease-in-out;
 	transition: .4s ease-in-out;
 }
 input.checkbox:checked:after {
@@ -2689,10 +2729,10 @@ input.checkbox:checked:after {
 		border-bottom-color: #fff;
 		border-left-color: #fff;
 	}
-} 
+}
 .vertical_post.check_box_agile {
     padding-bottom: 1em;
-}  
+}
 .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
     margin-left: -29px;
 }
@@ -4275,7 +4315,7 @@ input.checkbox:checked:after {
 	.w3ls_logo_products_left1:nth-child(3) {
 		margin: 0.5em 0 1em;
 	}
-	
+
 	.more a {
 		font-size: 13px;
 	}
@@ -4439,7 +4479,7 @@ input.checkbox:checked:after {
 	}
 	.modal-dialog {
 		width: 290px;
-	}	
+	}
 	.table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
 		padding: 3px !important;
 	}

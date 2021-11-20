@@ -32,13 +32,30 @@ $this->beginPage() ?>
         </form>
     </div>
     <div class="product_list_header">
-        <form action="#" method="post" class="last">
-            <fieldset>
-                <input type="hidden" name="cmd" value="_cart" />
-                <input type="hidden" name="display" value="1" />
-                <input type="submit" name="submit" value="View your cart" class="button" />
-            </fieldset>
-        </form>
+        <button onclick="getCart()" type="button" class="button" data-toggle="modal" data-target="#modal-cart">
+            <span class="cart-sum">
+                $<?= isset($_SESSION['cart.sum']) ? $_SESSION['cart.sum'] : '0'?>
+            </span>
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="modal-cart" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Корзина</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Продолжить покупки</button>
+                        <a href="<?= Url::to(['cart/view']) ?>" type="button" class="btn btn-success">Оформить заказ</a>
+                        <button onclick="clearCart()" type="button" class="btn btn-danger">Очистить корзину</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="w3l_header_right">
         <ul>
