@@ -8,6 +8,7 @@ use app\models\Cart;
 use app\models\Order;
 use app\models\OrderProduct;
 use app\models\Product;
+use http\Params;
 
 class CartController extends AppController
 {
@@ -93,6 +94,15 @@ class CartController extends AppController
             } else {
                 $transaction->commit();//применяем транзакцию
                 \Yii::$app->session->setFlash('success', 'Ваш заказ принят');
+
+                try {//нехрена непонял, зачем try?
+                    \Yii::$app->mailer->compose('order', ['session' => $session])//отправляем вид с товарами заказа
+                    ->setFrom([\Yii::$app->params['senderEmail'] => \Yii::$app->params['senderName']])//от кого письмо + название сайта (можно только почта, без массива)
+                    ->setTo([$order->email, \Yii::$app->params['adminEmail']])//кому отправляем письма
+                    ->setSubject('Заказ на сайте')//тема письма
+                    ->send();//отправляем письмо
+                }catch(\Swift_TransportException $e){}
+
                 $session->remove('cart');//очищаем корзину
                 $session->remove('cart.qty');
                 $session->remove('cart.sum');
