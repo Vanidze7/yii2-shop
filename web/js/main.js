@@ -153,3 +153,4 @@ $('.value-plus, .value-minus').on('click', function(){
     });
 });
 /*Cart*/
+

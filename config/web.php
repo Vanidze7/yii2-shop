@@ -15,6 +15,13 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'modules' => [//подключаем модуль админа
+        'admin' => [
+            'class' => 'app\modules\admin\Module',
+            'layout' => 'admin',//подключаем админский шаблон
+            'defaultRoute' => 'main/index',//устанавливаем путь админской страницы
+        ],
+    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -37,6 +44,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' => '/admin/auth/login',//че-то там
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
