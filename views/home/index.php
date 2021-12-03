@@ -1,6 +1,6 @@
 <!-- banner -->
 <div class="banner">
-    <?= $this->render('//layouts/inc/sidebar') //подключаем боковой сайтбар?>
+    <?= $this->render('//layouts/inc/sidebar') //подключаем боковой сайтбар (две // указывают на путь views)?>
     <div class="w3l_banner_nav_right">
         <section class="slider">
             <div class="flexslider">

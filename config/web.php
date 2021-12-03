@@ -23,6 +23,9 @@ $config = [
         ],
     ],
     'components' => [
+        'formatter' => [
+            'datetimeFormat' => 'php:d F Y H:i:s',//правила вывода даты для всего приложения (Yii/отображение данных/форматирование данных)
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '8TNYZtMx3fJw6nGvcP88LVpShiCTf7W3',
