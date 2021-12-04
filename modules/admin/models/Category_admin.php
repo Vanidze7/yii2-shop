@@ -11,6 +11,11 @@ class Category_admin extends \yii\db\ActiveRecord
         return 'category';
     }
 
+    public function getCategory_admin()
+    {
+        return $this->hasOne(Category_admin::class, ['id' => 'parent_id']);//связываем столбцы БД
+    }
+
     public function rules()
     {
         return [
@@ -24,10 +29,10 @@ class Category_admin extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'parent_id' => 'Parent ID',
-            'title' => 'Title',
-            'description' => 'Description',
-            'keywords' => 'Keywords',
+            'parent_id' => 'Родительский карапуз',
+            'title' => 'Наименование',
+            'description' => 'Описание',
+            'keywords' => 'Ключевое слово',
         ];
     }
 }

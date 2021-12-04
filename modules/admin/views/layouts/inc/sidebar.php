@@ -30,6 +30,17 @@
                     <li><a href="<?= \yii\helpers\Url::to(['order_admin/create']) ?>">Добавить сосисочку</a></li>
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-cubes"></i> <span>Карапузы</span>
+                    <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?= \yii\helpers\Url::to(['category_admin/index']) ?>">Список карапузов</a></li>
+                    <li><a href="<?= \yii\helpers\Url::to(['category_admin/create']) ?>">Добавить карапуза</a></li>
+                </ul>
+            </li>
         </ul>
         <!-- /.sidebar-menu -->
     </section>

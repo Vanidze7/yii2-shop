@@ -14,6 +14,8 @@ class LeftbarWidget extends Widget
     public $data;//массив всех категорий
     public $tree;//для формирования дерева массива
     public $menuHtml;//готовая верста меню Для метода run
+    public $model;//для исключения категории из выпадающего списка
+    public $cache_time = 60;//
 
     public function init()
     {
@@ -29,9 +31,12 @@ class LeftbarWidget extends Widget
 
     public function run()
     {
-        $menu = \Yii::$app->cache->get('menu');//получаем кэшированные данные по ключу
-        if($menu)
-            return $menu;//после ретюрна код не выполняется типо?
+        if ($this->cache_time)
+        {
+            $menu = \Yii::$app->cache->get('menu');//получаем кэшированные данные по ключу
+            if($menu)
+                return $menu;//после ретюрна код не выполняется типо?
+        }
 
         $this->data = Category::find()->select('id, parent_id, title')->indexBy('id')->asArray()->all();
         //найди такие столбцы, придай ключям массива значение столбца id, сделай из объекта массивов - массив массивов и покажи все
@@ -39,9 +44,8 @@ class LeftbarWidget extends Widget
         $this->menuHtml = '<ul class="' . $this->ul_class . '">';//добавляем класс к свойству
         $this->menuHtml .= $this->getMenuHtml($this->tree);//примени метод getMenuHtml на переданное дерево (для верстки) и приклей к свойству
         $this->menuHtml .= '</ul>';
-
-        \Yii::$app->cache->set('menu', $this->menuHtml, 60);//кэшируем данные
-
+        if ($this->cache_time)
+            \Yii::$app->cache->set('menu', $this->menuHtml, $this->cache_time);//кэшируем данные
         return $this->menuHtml;
     }
 
@@ -57,17 +61,17 @@ class LeftbarWidget extends Widget
         }
         return $tree;
     }
-    protected function getMenuHtml($tree)
+    protected function getMenuHtml($tree, $tab = '')
     {
         $str = '';
         foreach ($tree as $category)
         {
-            $str .= $this->catToTemplate($category);//прогони каждую категорию дерева через метод
+            $str .= $this->catToTemplate($category, $tab);//прогони каждую категорию дерева через метод
         }
         return $str;
     }
 
-    protected function catToTemplate($category)
+    protected function catToTemplate($category, $tab)
     {
         ob_start();//буферизация вывода
         include __DIR__ . '/leftbar_tpl/' . $this->tpl;//подключаем шаблон из свойства tpl
