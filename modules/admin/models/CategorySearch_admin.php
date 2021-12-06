@@ -25,7 +25,7 @@ class CategorySearch_admin extends Category_admin
 
     public function search($params)
     {
-        $query = Category_admin::find();
+        $query = Category_admin::find()->with('category_admin');//для уменьшения кол-ва запросов
 
         // add conditions that should always apply here
 

@@ -19,7 +19,7 @@
         <div class="agileinfo_single">
             <h5><?= $product->title ?></h5>
             <div class="col-md-3 agileinfo_single_left">
-                <?= \yii\helpers\Html::img("@web/products/{$product->img}", ['alt' => $product->title, 'id' => 'example', 'width' => '300px']) ?>
+                <?= \yii\helpers\Html::img("@web/{$product->img}", ['alt' => $product->title, 'id' => 'example', 'width' => '300px']) ?>
             </div>
             <div class="col-md-8 agileinfo_single_right">
                 <div class="rating1">

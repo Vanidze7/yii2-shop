@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-12">
         <div class="box">
             <div class="box-body">
-                <div class="order-admin-update">
+                <div class="order-admin-create">
                     <?= $this->render('_form', [
                         'model' => $model,
                     ]) ?>

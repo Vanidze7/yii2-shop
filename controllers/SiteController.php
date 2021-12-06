@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Category;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -125,4 +126,10 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    /*public function actionGetCategories()
+    {
+        $categories = Category::find()->all();
+        return $this->asJson($categories);
+    }*/
 }

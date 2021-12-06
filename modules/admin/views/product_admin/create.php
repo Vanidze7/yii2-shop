@@ -2,11 +2,8 @@
 
 use yii\helpers\Html;
 
-/* @var $this yii\web\View */
-/* @var $model app\modules\admin\models\Category_admin */
-
-$this->title = 'Добавить карапуза';
-$this->params['breadcrumbs'][] = ['label' => 'Список карапузов', 'url' => ['index']];
+$this->title = 'Добавить продукт';
+$this->params['breadcrumbs'][] = ['label' => 'Список продуктов', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -14,7 +11,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-12">
         <div class="box">
             <div class="box-body">
-                <div class="category-admin-create">
+                <div class="product-admin-create">
                     <?= $this->render('_form', [
                         'model' => $model,
                     ]) ?>

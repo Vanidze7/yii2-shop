@@ -1,8 +1,6 @@
 <aside class="main-sidebar">
-
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
@@ -39,6 +37,17 @@
                 <ul class="treeview-menu">
                     <li><a href="<?= \yii\helpers\Url::to(['category_admin/index']) ?>">Список карапузов</a></li>
                     <li><a href="<?= \yii\helpers\Url::to(['category_admin/create']) ?>">Добавить карапуза</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-cutlery"></i> <span>Продукты</span>
+                    <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?= \yii\helpers\Url::to(['product_admin/index']) ?>">Список продуктов</a></li>
+                    <li><a href="<?= \yii\helpers\Url::to(['product_admin/create']) ?>">Добавить продукт</a></li>
                 </ul>
             </li>
         </ul>

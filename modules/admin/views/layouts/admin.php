@@ -180,7 +180,7 @@ $this->beginPage();
     </header>
     <!-- Left side column. contains the logo and sidebar -->
     <?= $this->render('/layouts/inc/sidebar') ?>
-
+    <?= Alert::widget() ?>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -192,11 +192,11 @@ $this->beginPage();
                 'homeLink' => ['label' => 'Главная', 'url' => '/admin/'],//переназначение ссылки виджета
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
-            <?= Alert::widget() ?>
         </section>
 
         <!-- Main content -->
         <section class="content container-fluid">
+
 
             <!--------------------------
               | Your Page Content Here |

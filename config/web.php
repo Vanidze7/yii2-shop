@@ -89,6 +89,16 @@ $config = [
             ],
         ],
     ],
+    'controllerMap' => [
+        'elfinder' => [
+            'class' => 'mihaildev\elfinder\PathController',
+            'access' => ['@'],//ограничение для авторизованных пользователей
+            'root' => [
+                'path' => 'upload',//путь к файлам
+                'name' => 'upload'//имя папки под файлы
+            ]
+        ]
+    ],
     'params' => $params,
 ];
 
